@@ -3,14 +3,14 @@ const app = express ();
 
 const port = 3000; 
 
-// metodo get es que permite hacer la busqueda desde el navegador.
+/* metodo get es que permite hacer la busqueda desde el navegador.
 // el primer parametro es la ruta y el ultimo e smi funcion call back que debe tener siempre dos parametros.
 app.get("/",(req,res) => {
     res.send("Esta es la ruta principal");
     console.log(`${new Date(Date.now()).toTimeString()} ${req.method} ${req.path} ${req.ip}`);//get the time, methoth, path and ip of who is requesting my app.
     /*console.log(req.headers);
     console.log(req.method);
-    console.log(req.path);*/
+    console.log(req.path);
 });
 
 app.get( "/users",(req,res) =>{
@@ -24,14 +24,18 @@ app.get("/tweets", (req, res) => {
     res.send(`Esta es el tweet ${id} y el ususario ${username}`);
 });
 
-/*
-app.listen(port, ()=>{
+/*app.listen(port, ()=>{
     console.log("Servidor inciando...");
 });
 const express = require("express");
 const app = express();
 
 const port = 3000;
+*/
+
+app.listen(port, () => {
+    console.log("Servidor iniciado ...");
+});
 
 const logMiddleware = (req, res, next) => {
     console.log(`${new Date(Date.now()).toTimeString()} ${req.method} ${req.path} ${req.ip}`);
@@ -46,6 +50,18 @@ app.get("/users", logMiddleware, (req, res) => {
     res.send("Esta es la ruta de usuarios");
 });
 
+app.post("/users", logMiddleware, (req, res) => {
+    res.send("Esta es la ruta de usuarios con post");
+});
+
+app.put("/users", logMiddleware, (req, res) => {
+    res.send("Esta es la ruta de usuarios con put");
+});
+
+app.delete("/users", logMiddleware, (req, res) => {
+    res.send("Esta es la ruta de usuarios con delete");
+});
+
 app.get("/users/:id", logMiddleware, (req, res) => {
     const id = req.params.id;
     res.send(`Esta es la página del usuario ${id}`);
@@ -56,6 +72,6 @@ app.get("/tweets", logMiddleware, (req, res) => {
     res.send(`Esta es el tweet ${id} y el ususario ${username}`);
 });
 
-app.listen(port, () => {
-    console.log("Servidor iniciado ...");
-});*/
+
+//class sep 22 other methots
+
