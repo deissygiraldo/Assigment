@@ -14,9 +14,15 @@ app.get("/",(req,res) => {
 });
 
 app.get( "/users",(req,res) =>{
-    console.log(`${new Date(Date.now()).toTimeString()} ${req.method} ${req.path} ${req.ip}`);
+    console.log(`${new Date(Date.now()).toTimeString()} ${req.method} ${req.path} ${req.ip}`);//log
     res.send("Estsa es la ruta de ususarios")
 })
+
+app.get("/tweets", (req, res) => {
+    console.log(`${new Date(Date.now()).toTimeString()} ${req.method} ${req.path} ${req.ip}`);//log
+    const { id, username } = req.query;//destructutacion
+    res.send(`Esta es el tweet ${id} y el ususario ${username}`);
+});
 
 
 app.listen(port, ()=>{
