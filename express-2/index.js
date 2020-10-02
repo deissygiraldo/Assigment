@@ -46,21 +46,20 @@ app.get("/", logMiddleware, (req, res) => {
     res.send("Esta es la ruta raiz");
 });
 
-app.get("/users", logMiddleware, (req, res) => {
-    res.send("Esta es la ruta de usuarios");
-});
+app.route("/users")
+    .get((req,res)=>{
 
-app.post("/users", logMiddleware, (req, res) => {
-    res.send("Esta es la ruta de usuarios con post");
-});
+    }) 
+    .post((req,res)=>{
 
-app.put("/users", logMiddleware, (req, res) => {
-    res.send("Esta es la ruta de usuarios con put");
-});
+    }) 
+    .put((req,res)=>{
 
-app.delete("/users", logMiddleware, (req, res) => {
-    res.send("Esta es la ruta de usuarios con delete");
-});
+    })
+    .delete((req,res)=>{
+
+    });  
+    
 
 app.get("/users/:id", logMiddleware, (req, res) => {
     const id = req.params.id;
