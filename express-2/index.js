@@ -24,7 +24,38 @@ app.get("/tweets", (req, res) => {
     res.send(`Esta es el tweet ${id} y el ususario ${username}`);
 });
 
-
+/*
 app.listen(port, ()=>{
     console.log("Servidor inciando...");
 });
+const express = require("express");
+const app = express();
+
+const port = 3000;
+
+const logMiddleware = (req, res, next) => {
+    console.log(`${new Date(Date.now()).toTimeString()} ${req.method} ${req.path} ${req.ip}`);
+    next();
+};
+
+app.get("/", logMiddleware, (req, res) => { 
+    res.send("Esta es la ruta raiz");
+});
+
+app.get("/users", logMiddleware, (req, res) => {
+    res.send("Esta es la ruta de usuarios");
+});
+
+app.get("/users/:id", logMiddleware, (req, res) => {
+    const id = req.params.id;
+    res.send(`Esta es la página del usuario ${id}`);
+});
+
+app.get("/tweets", logMiddleware, (req, res) => {
+    const { id, username } = req.query;
+    res.send(`Esta es el tweet ${id} y el ususario ${username}`);
+});
+
+app.listen(port, () => {
+    console.log("Servidor iniciado ...");
+});*/
