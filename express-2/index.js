@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express ();
+const dotenv = require("dotenv").config(); // require for the library to read the .env file
+const config = require("./config");
 
  
 
@@ -33,7 +35,7 @@ const app = express();
 const port = 3000;
 */
 
-app.listen(port, () => {
+app.listen(config.port, () => {
     console.log("Servidor iniciado ...");
 });
 
