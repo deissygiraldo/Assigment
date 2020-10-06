@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express ();
 
-const port = 3000; 
+ 
 
 /* metodo get es que permite hacer la busqueda desde el navegador.
 // el primer parametro es la ruta y el ultimo e smi funcion call back que debe tener siempre dos parametros.
