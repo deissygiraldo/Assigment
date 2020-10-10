@@ -16,6 +16,7 @@ npm install
 4. create a .env file
 ````
 PORT=3000
+SALT=10
 ```
 5. run the app
 ```
