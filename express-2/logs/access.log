@@ -1,2 +1,11 @@
 18:39:37 GMT-0400 (Eastern Daylight Time) GET /users ::1
 18:39:55 GMT-0400 (Eastern Daylight Time) GET /users ::1
+20:30:39 GMT-0400 (Eastern Daylight Time) GET /tweets/1 ::1
+20:30:47 GMT-0400 (Eastern Daylight Time) GET /tweets/ ::1
+20:31:02 GMT-0400 (Eastern Daylight Time) POST /tweets/ ::1
+20:34:27 GMT-0400 (Eastern Daylight Time) POST /tweets ::1
+20:41:35 GMT-0400 (Eastern Daylight Time) POST /tweets ::1
+20:42:23 GMT-0400 (Eastern Daylight Time) POST /tweets ::1
+20:42:49 GMT-0400 (Eastern Daylight Time) POST /tweets ::1
+20:43:13 GMT-0400 (Eastern Daylight Time) GET /tweets/1 ::1
+20:46:46 GMT-0400 (Eastern Daylight Time) GET /tweets/ ::1
