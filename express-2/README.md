@@ -17,6 +17,9 @@ npm install
 ````
 PORT=3000
 SALT=10
+WEATHER_API_KEY={my-openweathermap-api-key}
+JWT_KEY={my-secret-key}
+```
 ```
 5. run the app
 ```
