@@ -6,16 +6,22 @@ const response = require("./../../lib/response");
 
 const login = (req, res) => {
     const { user, password } = req.body;
-    const findUser = users.find (user => user.username === username && user.password === password);    
+    const user = users.find (user => user.username === username);  
+    const findUser = bcrypt.compareSync(password, user.password);  
+
+if (user){ 
     if (findUser){
-       const token = jwt.sign( {username}, config.jwtKey); //firmar el token
+       const token = jwt.sign( {username}, config.jwtKey); //firmar el token, the first if is for check user and not giving clue 
        res.json(response(true, [{token}]));
     }else {
         res.json(response (false, undefined, "Datos invalidos"));
     }
+}else{
+    res.json(response (false, undefined, "Datos invalidos"));
+}    
 };
 
-const getUsers = (req, res)=>{
+const getUsers = (req, res) => {
     res.json(response(true, users));
 };
 
