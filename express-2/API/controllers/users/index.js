@@ -1,7 +1,19 @@
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken")
 const users = require("./../../models/users");
 const config = require("./../../../config");
 const response = require("./../../lib/response");
+
+const login = (req, res) => {
+    const { user, password } = req.body;
+    const findUser = users.find (user => user.username === username && user.password === password);    
+    if (findUser){
+       const token = jwt.sign( {username}, config.jwtKey); //firmar el token
+       res.json(response(true, [{token}]));
+    }else {
+        res.json(response (false, undefined, "Datos invalidos"));
+    }
+};
 
 const getUsers = (req, res)=>{
     res.json(response(true, users));
@@ -67,4 +79,4 @@ const getUser = (req, res) => {
     }
 };
 
-module.exports = {getUsers, newUser, deleteUser, updateUser, getUser};
+module.exports = {getUsers, newUser, deleteUser, updateUser, getUser, login};
