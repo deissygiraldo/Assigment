@@ -3,6 +3,7 @@ const router = express.Router();
 const controller = require("./../../controllers/users");
 const authentication = require("./../../middlewares/authentication");
 const authorization = require("./../../middlewares/authorization");
+const audits = require("./../../middlewares/audits");
 
 router.route("/")
     .post(controller.newUser)
@@ -13,8 +14,8 @@ router.router("/login")
 
 router.route("/:username")
     .get(authentication, controller.getUser)
-    .put(authentication, authorization, controller.updateUser)
-    .delete(authentication, authorization, controller.deleteUser);
+    .put(authentication, authorization, audits, controller.updateUser)
+    .delete(authentication, authorization, audits, controller.deleteUser);
 
 
 module.exports = router;
