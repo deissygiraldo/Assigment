@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const controller = require("./../../controllers/tweets");
+const authentication = require("./../../middlewares/authentication");
 
 router.route("/")
-    .post(controller.newTweet)
+    .post(authentication, controller.newTweet)
     .get(controller.getTweets);
 
 router.route("/:id")

@@ -9,7 +9,8 @@ const getTweets = (req, res)=>{
 const newTweet = (req, res)=>{
     const tweet = {
         content: req.body.content,
-        date: lib.getCanadaDate()
+        date: lib.getCanadaDate(),
+        username: req.username
     };
     tweets.push(tweet);
     res.status(200).json(response(true, [tweet]));
