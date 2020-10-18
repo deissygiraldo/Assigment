@@ -208,6 +208,10 @@ PORT=3000
 SALT=10
 WEATHER_API_KEY={my-openweathermap-api-key}
 JWT_KEY={my-secret-key}
+CONSUMER_KEY={twitter-key}
+CONSUMER_SECRET={twitter-secret}
+ACCESS_TOKEN_KEY={twitter-token}
+ACCESS_TOKEN_SECRET={twitter-token-secret}
 ```
 
 5. Run the app
