@@ -36,10 +36,15 @@ const validateTweet = (tweet) => {
 
 };
 
+const validateNumber = (number) => {
+
+};
+
 module.exports = {
     validateEmail,
     validateName,
     validateUsername,
     validatePasswordMatch,
-    validatePassword
+    validatePassword,
+    validateNumber
 }; 
