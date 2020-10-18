@@ -9,7 +9,7 @@ router.route("/")
     .post(controller.newUser)
     .get(authentication, audits, controller.getUsers);
 
-router.router("/login")
+router.route("/login")
     .post(controller.login)
 
 router.route("/:username")
