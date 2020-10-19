@@ -1,3 +1,10 @@
 
 ::1 - - [15/Oct/2020:23:00:39 +0000] "POST /api/users HTTP/1.1" 200 173 "-" "PostmanRuntime/7.26.5"
 ::1 - - [15/Oct/2020:23:11:54 +0000] "POST /api/users HTTP/1.1" 200 173 "-" "PostmanRuntime/7.26.5"
+::1 - - [18/Oct/2020:23:39:55 +0000] "POST /api/users HTTP/1.1" 500 1772 "-" "PostmanRuntime/7.26.5"
+::1 - - [18/Oct/2020:23:51:16 +0000] "POST /api/users HTTP/1.1" 500 1772 "-" "PostmanRuntime/7.26.5"
+::1 - - [19/Oct/2020:00:01:57 +0000] "POST /api/users HTTP/1.1" 501 89 "-" "PostmanRuntime/7.26.5"
+::1 - - [19/Oct/2020:00:02:40 +0000] "POST /api/users HTTP/1.1" 501 89 "-" "PostmanRuntime/7.26.5"
+::1 - - [19/Oct/2020:00:04:34 +0000] "POST /api/users HTTP/1.1" 500 1744 "-" "PostmanRuntime/7.26.5"
+::1 - - [19/Oct/2020:00:05:22 +0000] "POST /api/users HTTP/1.1" 501 78 "-" "PostmanRuntime/7.26.5"
+::1 - - [19/Oct/2020:00:05:36 +0000] "POST /api/users HTTP/1.1" 500 1744 "-" "PostmanRuntime/7.26.5"

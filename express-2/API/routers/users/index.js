@@ -4,9 +4,10 @@ const controller = require("./../../controllers/users");
 const authentication = require("./../../middlewares/authentication");
 const authorization = require("./../../middlewares/authorization");
 const audits = require("./../../middlewares/audits");
+const validator = require("./../../middlewares/validator");
 
 router.route("/")
-    .post(controller.newUser)
+    .post(validator.validateNewUser,controller.newUser)
     .get(authentication, audits, controller.getUsers);
 
 router.route("/login")

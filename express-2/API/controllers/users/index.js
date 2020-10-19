@@ -1,4 +1,4 @@
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const users = require("./../../models/users");
 const config = require("./../../../config");
@@ -11,9 +11,9 @@ const login = (req, res) => {
         const findUser = bcrypt.compareSync(password, user.password);
         if (findUser) {
             const token = jwt.sign({ username }, config.jwtKey);
-            res.json(response(true, [{token}]));
+            res.status(200).json(response(true, [{token}]));
         }else{
-            res.json(response(false, undefined, "Datos no válidos"));
+            res.status(500).json(response(false, undefined, "Datos no válidos"));
         }
     }else{
         res.json(response(false, undefined, "Datos no válidos"));
@@ -27,13 +27,14 @@ const getUsers = (req, res) => {
 };
 
 const newUser = (req, res)=>{
+    const { name, username, password, passwordConfirmation, email } = req.body;
     const saltRounds = bcrypt.genSaltSync(config.SALT);
-    const passwordHashed = bcrypt.hashSync(req.body.password, saltRounds);
+    const passwordHashed = bcrypt.hashSync(password, saltRounds);
 
     const user = {
-        name: req.body.name,
-        username: req.body.username,
-        email: req.body.email,
+        name,
+        username,
+        email,
         password: passwordHashed
     };
 
@@ -49,7 +50,7 @@ const newUser = (req, res)=>{
 const deleteUser = (req, res) => {
     const username = req.params.username;
     const findUser = users.find(u => u.username === username);
-    if( findUser === undefined ){
+     if( findUser === undefined ){
         res.status(500).json(response(false, undefined, "El usuario consultado no existe"));
     }else{
         const result = users.filter(u => u.username !== username);

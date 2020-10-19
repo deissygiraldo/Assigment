@@ -11,5 +11,9 @@ router.route("/")
 router.route("/:id")
     .get(controller.getTweet);
 
+router.route("/stream/:username")
+    .get(controller.getTweetsStream);
+
+
 
 module.exports = router;
