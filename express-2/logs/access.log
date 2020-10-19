@@ -8,3 +8,4 @@
 ::1 - - [19/Oct/2020:00:04:34 +0000] "POST /api/users HTTP/1.1" 500 1744 "-" "PostmanRuntime/7.26.5"
 ::1 - - [19/Oct/2020:00:05:22 +0000] "POST /api/users HTTP/1.1" 501 78 "-" "PostmanRuntime/7.26.5"
 ::1 - - [19/Oct/2020:00:05:36 +0000] "POST /api/users HTTP/1.1" 500 1744 "-" "PostmanRuntime/7.26.5"
+::1 - - [19/Oct/2020:00:17:19 +0000] "POST /api/users HTTP/1.1" 500 1744 "-" "PostmanRuntime/7.26.5"
